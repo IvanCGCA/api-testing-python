@@ -1,26 +1,33 @@
 # 🐍 Python API Automation Suite
 
-Este repositorio contiene una suite de pruebas automatizadas para validar endpoints REST, desarrollada con **Python** y **Pytest**.
+This repository contains a robust automated testing suite designed to validate REST endpoints, developed with **Python** and **Pytest**. It features professional-grade reporting and advanced HTTP session management.
 
-## 🛠️ Stack Tecnológico
-- **Lenguaje:** Python 3.14.3
-- **Framework de Pruebas:** Pytest
-- **Librería HTTP:** Requests (con manejo de Session y Headers)
-- **Reportes:** Pytest-html
+## 🛠️ Tech Stack
+- **Language:** Python 3.14.3
+- **Testing Framework:** Pytest
+- **HTTP Library:** Requests (implemented with Session and Custom Headers management)
+- **Reporting:** **Allure Reports** (Interactive Dashboard) & Pytest-html
+- **CI/CD:** Integrated with GitHub Actions
 
-## 🎯 Escenarios de Prueba
-1. **GET Users:** Validación de status 200 y presencia de datos.
-2. **POST Create User:** Verificación de creación exitosa (Status 201).
-3. **Negative Test (404):** Validación de manejo de errores en usuarios inexistentes.
-4. **Functional POST:** Simulación de creación de contenido (Posts).
-5. **Invalid Route:** Verificación de seguridad ante rutas no definidas.
+## 🎯 Test Scenarios
+1. **GET Users:** Validation of 200 OK status and data integrity.
+2. **POST Create User:** Verification of successful resource creation (201 Created).
+3. **Negative Testing (404):** Error handling validation for non-existent users.
+4. **Functional POST:** Simulation of content creation (Posts) with schema validation.
+5. **Security/Invalid Route:** Verification of system behavior against undefined endpoints.
 
-## 🔧 Notas Técnicas (Troubleshooting)
-Durante el desarrollo, se implementó una arquitectura basada en `requests.Session()` y configuraciones personalizadas de `User-Agent` para emular el comportamiento de un navegador real, garantizando la estabilidad de los tests ante protecciones de red (WAF/Cloudflare).
+## 🔧 Engineering Notes (Troubleshooting & Architecture)
+To ensure test stability against network protections (WAF/Cloudflare), I implemented an architecture based on `requests.Session()`. This includes custom `User-Agent` configurations to emulate real browser behavior, preventing 403/401 errors during automated execution.
 
-## 🚀 Ejecución
-1. Activar entorno virtual: `.\venv\Scripts\activate`
-2. Instalar dependencias: `pip install -r requirements.txt`
-3. Ejecutar suite y generar reporte:
+The suite is now integrated with **Allure Framework**, providing a high-level executive dashboard to analyze test trends, execution times, and root cause analysis of failures.
+
+## 📊 View Live Report
+You can view the interactive execution report here:
+👉 **[Link to your Allure Report on your Portfolio]**
+
+## 🚀 Execution & Reporting
+1. **Activate Environment:** `.\venv\Scripts\activate`
+2. **Install Dependencies:** `pip install -r requirements.txt`
+3. **Run Tests & Generate Data:**
    ```bash
-   pytest -v --html=report.html
+   python -m pytest --alluredir=allure-results
