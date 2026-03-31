@@ -23,7 +23,7 @@ The suite is now integrated with **Allure Framework**, providing a high-level ex
 
 ## 📊 View Live Report
 You can view the interactive execution report here:
-👉 **[Link to your Allure Report on your Portfolio]**
+👉 **https://ivancgca.github.io/**
 
 ## 🚀 Execution & Reporting
 1. **Activate Environment:** `.\venv\Scripts\activate`
